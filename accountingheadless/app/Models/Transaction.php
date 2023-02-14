@@ -34,4 +34,9 @@ class Transaction extends Model
     {
         return $query->where('transaction_type', $transactionType);
     }
+
+    public function transactionLog ()
+    {
+        return $this->hasOne(TransactionLog::class);
+    }
 }

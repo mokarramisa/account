@@ -30,4 +30,9 @@ class TransactionLog extends Model
     {
         return $this->OperatingSystem()::class;
     }
+
+    public function transaction ()
+    {
+        return $this->belongsTo(Transaction::class);
+    }
 }

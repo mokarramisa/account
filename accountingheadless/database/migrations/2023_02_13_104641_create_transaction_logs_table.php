@@ -18,9 +18,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('operator_id')->constrained()->nullable();
+            $table->foreignId('provience_id')->constrained()->nullable();
             $table->foreignId('browser_id')->constrained()->nullable();
             $table->unsignedBigInteger('os_id')->nullable();
             $table->foreign('os_id')->references('id')->on('operating_systems');
+            $table->foreignId('transaction_id')->constrained();
             $table->timestamps();
         });
         Schema::enableForeignKeyConstraints();

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Operator extends Model
 {
     use HasFactory;
+
+    // public function transactionLog ()
+    // {
+    //     return $this->hasMany(TransactionLog::class);
+    // }
 }
