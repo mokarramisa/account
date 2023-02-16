@@ -30,13 +30,19 @@ class Transaction extends Model
         return $this->belongsTo(Gateway::class);
     }
 
+    public function transactionLog ()
+    {
+        return $this->hasOne(TransactionLog::class);
+    }
+
+    // used this in a repository so delete it next time
     public function scopeTransactionType ($query, $transactionType)
     {
         return $query->where('transaction_type', $transactionType);
     }
 
-    public function transactionLog ()
+    public function scopeCardNumber ($query)
     {
-        return $this->hasOne(TransactionLog::class);
+        return $query->selectRaw('count(card_number) as counts')->groupBy('card_number');
     }
 }

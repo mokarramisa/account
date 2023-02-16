@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Operator extends Model
+class Wallet extends Model
 {
     use HasFactory;
 
-    public function transactionLogs ()
+    public function user ()
     {
-        return $this->hasMany(TransactionLog::class);
+        return $this->belongsTo(User::class);
     }
 }

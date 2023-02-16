@@ -14,13 +14,13 @@ class Provience extends Model
     //     return $this->hasOneThrough(Transaction::class, TransactionLog::class);
     // }
 
-    public function tranactionLogs ()
-    {
-        return $this->hasMany(Provience::class);
-    }
-
     public function transactionLogs ()
     {
-        return $this->hasManyThrough(Transaction::class, TransactionLog::class);
+        return $this->hasMany(TransactionLog::class);
     }
+
+    // public function transactionLogs ()
+    // {
+    //     return $this->hasManyThrough(Transaction::class, TransactionLog::class);
+    // }
 }

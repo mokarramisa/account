@@ -26,9 +26,14 @@ class TransactionLog extends Model
         return $this->belongsTo(Browser::class);
     }
 
+    public function device ()
+    {
+        return $this->belongsTo(Device::class);
+    }
+
     public function operatingSystem ()
     {
-        return $this->OperatingSystem()::class;
+        return $this->belongsTo(OperatingSystem::class);
     }
 
     public function transaction ()

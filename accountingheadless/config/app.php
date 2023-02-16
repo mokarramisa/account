@@ -69,7 +69,8 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    //'timezone' => 'UTC',
+    'timezone' => 'Asia/Tehran',
 
     /*
     |--------------------------------------------------------------------------
@@ -82,7 +83,8 @@ return [
     |
     */
 
-    'locale' => 'en',
+    //'locale' => 'en',
+    'locale' => 'fa',
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +97,8 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    //'fallback_locale' => 'en',
+    'fallback_locale' => 'fa',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,7 +111,8 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    //'faker_locale' => 'en_US',
+    'faker_locale' => 'fa_IR',
 
     /*
     |--------------------------------------------------------------------------
@@ -209,7 +213,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        Jenssegers\Agent\AgentServiceProvider::class,
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
-
 ];

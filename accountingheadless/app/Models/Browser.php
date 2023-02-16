@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Browser extends Model
 {
     use HasFactory;
+
+    public function transactionLogs ()
+    {
+        return $this->hasMany(TransactionLog::class);
+    }
 }
