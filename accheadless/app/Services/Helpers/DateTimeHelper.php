@@ -90,6 +90,30 @@ class DateTimeHelper
         return $persianDate[2];
     }
 
+    public function endOfThisMonth ()
+    {
+        return (Jalalian::forge('next month')->subDays(1))->toCarbon();
+    }
+
+    public function finantialPeriod ()
+    {
+        $five_month_before = Jalalian::fromFormat('Y-m-d', jdate()->subMonths('4')->format('Y-m-01'))->toCarbon();
+        $start_of_year = Jalalian::fromFormat('Y-m-d' ,jdate()->format('Y-01-01'))->toCarbon();
+
+        //اختلاف ماه فعلی از 5 ماه قبل محاسبه می‌شود اگر منفی بود از ابتدای سال آغاز می‌کنیم.
+        $diff = strtotime($five_month_before) - strtotime($start_of_year);
+        $from = ($diff < 0) ? $start_of_year : $five_month_before;
+
+        return $from;
+    }
+
+    public function getEndOfMonth(Carbon $dt = null) 
+    {
+        Jalalian::forge('next month');
+
+        return [$this->getJalaliYear(), $this->getJalaliMonth()];
+    }
+
     public static function lastSevenDays ()
     {
         $startDate = Carbon::now()->subDays(7);

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Analysis\ComparisonChartController;
 use App\Http\Controllers\Analysis\DataAnalysisController;
 use App\Http\Controllers\Analysis\FinantialReportsAnalysisController;
+use App\Http\Controllers\Analysis\IncomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,5 @@ Route::get('/data-analysis', [DataAnalysisController::class, 'analysis']);
 Route::get('/compare-charts', [ComparisonChartController::class, 'compare']);
 
 Route::get('/finantial-reposrts', [FinantialReportsAnalysisController::class, 'reports']);
+
+Route::get('/compare-income', [IncomeController::class, 'compareIncome']);

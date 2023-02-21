@@ -40,7 +40,10 @@ if (! function_exists('thisWeek')) {
     function thisWeek ()
     {
         $fars = CarbonImmutable::now()->locale('fa');
-        return [$fars->startOfWeek(Carbon::SATURDAY), $fars->endOfWeek(Carbon::FRIDAY)];
+        return [
+            $fars->startOfWeek(Carbon::SATURDAY), 
+            $fars->endOfWeek(Carbon::FRIDAY)
+        ];
     }
 }
 
@@ -48,7 +51,10 @@ if (! function_exists('lastWeek')) {
     function lastWeek ()
     {
         $fars = CarbonImmutable::now()->locale('fa');
-        return [$fars->startOfWeek(Carbon::SATURDAY)->subWeek(), $fars->endOfWeek(Carbon::FRIDAY)->subWeek()];
+        return [
+            $fars->startOfWeek(Carbon::SATURDAY)->subWeek(), 
+            $fars->endOfWeek(Carbon::FRIDAY)->subWeek()
+        ];
     }
 }
 

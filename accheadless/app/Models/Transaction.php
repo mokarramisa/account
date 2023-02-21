@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Builders\DateBuilder;
 use App\Collections\GroupByCollection;
-use App\Filters\Transaction\TransactionFilter;
 use App\Filters\Transaction\TransactionFilters;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
